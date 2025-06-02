@@ -44,8 +44,7 @@ Deal::Deal(const std::string& contract_num,
 void Deal::addFacility(const Facility& facility) {
     // Vérifier que la facility est compatible avec le deal
     if (facility.getCurrency() != currency) {
-        // Permettre des devises différentes (selon le sujet)
-        // Mais on pourrait ajouter une validation si nécessaire
+        // Permettre des devises différentes - RAS
     }
     
     // Vérifier que le total des facilities ne dépasse pas le montant du projet

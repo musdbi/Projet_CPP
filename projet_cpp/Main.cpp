@@ -3,7 +3,6 @@
 #include <algorithm>
 #include <stdexcept>
 
-// Inclure seulement les headers, PAS les .cpp !
 #include "Facility.h"
 #include "Lender.h"
 #include "Part.h"
@@ -11,14 +10,12 @@
 #include "Deal.h"
 #include "Portfolio.h"
 
-// Variables globales
 std::vector<Lender> pool;
 std::vector<Lender> lenders;
 std::vector<Borrower> borrowers;
-std::vector<Facility> facilities;  // Correction du nom
+std::vector<Facility> facilities;
 std::vector<Deal> deals;
 
-// Déclarations des fonctions
 void createDeal();
 Borrower createBorrower();
 Lender createLender();
@@ -41,17 +38,17 @@ int main() {
 
         // Création d'un deal avec le nouveau constructeur
         Deal deal("S1234", "BNP", lenders, borrowers[0], 10000000, "USD", 
-                  "2023-06-26", "2033-06-26", Deal::Status::CLOSED);
+                  "2025-06-26", "2035-06-26", Deal::Status::CLOSED);
         deals.push_back(deal);
 
         // Création d'une facility avec validation
-        Facility facility1("2023-06-26", "2033-06-26", 5000000, "USD", 
+        Facility facility1("2025-06-26", "2035-06-26", 5000000, "USD", 
                           {lenders[0], lenders[1]}, 0.05);
         
         // Ajout de remboursements
-        facility1.payPart(1000000, "2025-06-25");
-        facility1.payPart(2000000, "2028-06-25");
-        facility1.payPart(1000000, "2030-06-25");
+        facility1.payPart(1000000, "2027-06-25");
+        facility1.payPart(2000000, "2030-06-25");
+        facility1.payPart(1000000, "2032-06-25");
         
         facilities.push_back(facility1);
         deals[0].addFacility(facility1);
@@ -190,7 +187,7 @@ void pay() {
 
 Deal* findDealByNumber(const std::string& dealNum) {
     for (auto& deal : deals) {
-        if (deal.getContractNum() == dealNum) {  // Utiliser getter au lieu d'accès direct
+        if (deal.getContractNum() == dealNum) {  
             return &deal;
         }
     }

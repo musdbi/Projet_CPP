@@ -19,4 +19,4 @@ private:
     void validateDate(const std::string& date) const;
 };
 
-#endif // PART_H
+#endif

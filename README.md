@@ -91,37 +91,29 @@ Structured Financing Application
 ### Compilation rapide
 ```bash
 # Windows
-g++ -std=c++17 -Wall -O2 -o projet_cpp.exe main.cpp Borrower.cpp Lender.cpp Part.cpp Facility.cpp Deal.cpp Portfolio.cpp
+g++ -std=c++17 -Wall -O2 -o main.exe main.cpp Borrower.cpp Lender.cpp Part.cpp Facility.cpp Deal.cpp Portfolio.cpp
 
 # Tests
-g++ -std=c++17 -Wall -g -o test_suite.exe test_suite.cpp Borrower.cpp Lender.cpp Part.cpp Facility.cpp Deal.cpp Portfolio.cpp
-```
-
-### Avec CMake
-```bash
-mkdir build && cd build
-cmake ..
-cmake --build .
+g++ -std=c++17 -Wall -g -o tests_unitaires.exe tests_unitaires.cpp Borrower.cpp Lender.cpp Part.cpp Facility.cpp Deal.cpp Portfolio.cpp
 ```
 
 ### Structure du projet
 ```
 projet_cpp/
 ├── main.cpp                    # Programme principal
-├── test_suite.cpp              # Tests unitaires
+├── tests_unitaires.cpp         # Tests unitaires
 ├── Borrower.h/.cpp             # Classe Emprunteur
 ├── Lender.h/.cpp               # Classe Prêteur
 ├── Part.h/.cpp                 # Classe Remboursement
 ├── Facility.h/.cpp             # Classe Tranche
 ├── Deal.h/.cpp                 # Classe Contrat
 ├── Portfolio.h/.cpp            # Classe Portfolio
-└── CMakeLists.txt              # Configuration build
 ```
 
 ### Vérification
 ```bash
-./test_suite.exe    # Tous les tests doivent passer (100%)
-./projet_cpp.exe    # Lancement de l'application
+./tests_unitaires.exe    # Tous les tests doivent passer (100%)
+./main.exe               # Lancement de l'application
 ```
 
 ## Auteurs

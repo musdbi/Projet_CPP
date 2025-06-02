@@ -37,7 +37,7 @@ private:
     std::vector<Lender> lenders;
     double annualInterestRate;
     double amount;
-    std::vector<Part> parts;  // Maintenant privé !
+    std::vector<Part> parts;
     
     // Méthodes de validation privées
     void validateAmount(double amount) const;
